@@ -1,8 +1,38 @@
 # Facebook Ad Library MCP
 
+[![Stars](https://img.shields.io/github/stars/thenavidm/facebook-ad-library-mcp?style=flat&logo=github&label=Stars)](https://github.com/thenavidm/facebook-ad-library-mcp)
+[![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/thenavidm/facebook-ad-library-mcp/ci.yml?branch=main&label=CI)](https://github.com/thenavidm/facebook-ad-library-mcp/actions)
+[![YouTube](https://img.shields.io/badge/YouTube-@thenavidm-red?logo=youtube&logoColor=white)](https://youtube.com/@thenavidm?sub_confirmation=1)
+[![X](https://img.shields.io/badge/X-@thenavidm-black?logo=x)](https://x.com/thenavidm)
+
 Give any AI agent read access to every ad running on Facebook, Instagram, Messenger, Threads and Audience Network. Free, no API key, any country.
 
 Meta's Ad Library is the largest public archive of advertising creative in the world, and it is completely open. This puts it inside your agent.
+
+> **You:** What is Ridge testing right now?
+>
+> **Claude:** They have 34 ads live. The oldest has run 214 days: a single static
+> image, "The last wallet you will buy", straight to a product page. The eleven
+> newest are all video with a founder talking to camera, and every one of them
+> points at a quiz funnel instead. They are moving from product-led to
+> problem-led, and the old ad is still running because it still works.
+
+Built by [Navid Moazzez](https://navid.me).
+
+## Contents
+
+| | Section | |
+|---|---|---|
+| 1 | [What you can ask it](#1-what-you-can-ask-it-) | Real prompts, not features |
+| 2 | [Quick install](#2-quick-install-) | One command, no account |
+| 3 | [Setup](#3-setup-) | Optional, and why you probably do not need it |
+| 4 | [Connect your client](#4-connect-your-client-) | Every client, copy and paste |
+| 5 | [Check it worked](#5-check-it-worked-) | `doctor`, and what actually fails |
+| 6 | [Tools](#6-tools-%EF%B8%8F) | All eight, and what each reaches |
+| 7 | [How it works](#7-how-it-works-%EF%B8%8F) | Why it returns more than a scraper |
+| 8 | [Limits, honestly](#8-limits-honestly-) | What no source can tell you |
+| | [FAQ](#faq-) | |
 
 ---
 
@@ -245,40 +275,48 @@ What you can infer is longevity. An ad running six months is probably working, b
 
 **Creative URLs expire.** Meta's CDN links are short-lived. Download what you want to keep, when you find it.
 
-This project is not affiliated with, endorsed by, or connected to Meta.
-
 ---
 
 ## FAQ ❓
 
 **What is an MCP server?**
+
 Model Context Protocol is a standard way to give an AI assistant real tools. Once this is connected, your assistant can search the Ad Library itself instead of you copying results into a chat.
 
 **Do I need a Facebook account?**
+
 No. The Ad Library is public and this reads it without signing in to anything.
 
 **Does it cost money?**
+
 Not by default. The free backend runs on your machine. The two provider backends bill per ad and are opt-in.
 
 **Why is it slow?**
+
 The free backend launches a real browser and scrolls a page, which takes 30 to 60 seconds. A provider backend answers in about a second, for money.
 
 **Can I see how much a competitor spends?**
+
 Only for EU-delivered ads and political ads, through `get_eu_transparency`. For a US commercial advertiser that number is not published anywhere.
 
 **Can it tell me which of their ads performs best?**
+
 No, and nothing can. You can see which have run longest, which is a reasonable proxy and not the same thing.
 
 **Why does an ad body say `{{product.brand}}`?**
+
 It is a catalogue ad. Meta fills those tokens per product at delivery. That is the real ad text.
 
 **Can I run it on a server?**
+
 Yes, with `--http`. The free backend needs Chromium available; a provider backend is easier to host.
 
 **Is scraping the Ad Library allowed?**
+
 The Ad Library is published deliberately, for transparency, and is open without login. This reads it the way a browser does. You are responsible for your own use.
 
 **Which countries work?**
+
 All of them. Pass any two-letter country code.
 
 ---
@@ -312,8 +350,12 @@ Navid Moazzez is a leading AI business strategist and the host of the AI Creator
 - Instagram: [@thenavidm](https://instagram.com/thenavidm)
 - LinkedIn: [thenavidm](https://linkedin.com/in/thenavidm)
 
-## Licence
+## License
 
-MIT. See [LICENSE](LICENSE).
+[MIT](./LICENSE). Free to use, modify, and share.
+
+Not affiliated with, endorsed by, or connected to Meta Platforms, Inc.
+
+---
 
 © 2026 NM Media. Made with ❤️ by [Navid Moazzez](https://navid.me).
