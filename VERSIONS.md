@@ -1,4 +1,10 @@
-# Versions
+# Facebook Ad Library MCP Versions
+
+| Component | Version | Last Updated |
+|-----------|---------|--------------|
+| facebook-ad-library-mcp | 0.1.0 | 2026-08-31 |
+
+---
 
 What changed, newest first, in terms of what it means for someone using it.
 
