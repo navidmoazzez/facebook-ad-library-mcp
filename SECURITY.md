@@ -2,7 +2,8 @@
 
 ## Reporting a vulnerability
 
-Email **accounts@navid.me**. Please do not open a public issue for a security
+Use GitHub's private vulnerability reporting on this repository. Please do not
+open a public issue for a security
 problem: an issue is visible the moment it is filed.
 
 ## What this server can reach
