@@ -1,0 +1,417 @@
+{
+ "data": {
+  "ad_library_main": {
+   "search_results_connection": {
+    "count": 14912,
+    "edges": [
+     {
+      "node": {
+       "collated_results": [
+        {
+         "ad_archive_id": "3189723897824849",
+         "collation_count": null,
+         "collation_id": null,
+         "is_active": true,
+         "page_id": "163762275750",
+         "page_is_deleted": false,
+         "snapshot": {
+          "branded_content": null,
+          "page_id": "163762275750",
+          "page_is_deleted": false,
+          "page_profile_uri": "https://www.facebook.com/shiekhshoes/",
+          "root_reshared_post": null,
+          "byline": null,
+          "disclaimer_label": null,
+          "page_name": "Shiekh Shoes",
+          "page_profile_picture_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461819266_910222591011362_8084659501518549438_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zwy1mJj2Z5gQ7kNvwGU-NcS&_nc_oc=AdqTktt-qY8P4GOYFfQlBlSLGlvC1xshIAEPLs3NKQcRSXDauEXSFhb0pIk9BczJbBkhb04YjS9RHRhqWkzvLoHx&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQLdZBRsnjOo9Io5beP59WdJiv1QOLeYcuKRM_F_AWfhgA&oe=6A9A90ED",
+          "event": null,
+          "caption": "Shiekh.com",
+          "cta_text": "Shop now",
+          "cards": [
+           {
+            "body": "\ud83d\udd25 Women\u2019s Kicks Alert! \nNike, Jordan, Adidas - Latest Styles!\n\ud83d\ude80 Shop In-Store & Online! \n\ud83c\udfc6 Highest Rewards! \n\ud83d\udce6 Free Shipping & Pickup!",
+            "cta_type": "SHOP_NOW",
+            "caption": "shiekh.com",
+            "link_description": "Nike",
+            "link_url": "https://www.shiekh.com/nike-black-nike-roshe-one-tdv.html",
+            "title": "Roshe one black",
+            "cta_text": "Shop Now",
+            "video_hd_url": null,
+            "video_preview_image_url": null,
+            "video_sd_url": null,
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null,
+            "image_crops": [],
+            "original_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461624359_758849013023053_2676386066107935282_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=KDxiCbhswvwQ7kNvwHRe2jG&_nc_oc=AdoqCqz2br1xgaTLWRHLIhD26k-03cRb0A5NEVzE8AFoRgmcOvpsvq9cYnCk2OZtzD63k07TbvW1djJFFnAMGMRZ&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQJRn3jd7RGYXkw714Z4qECe1SJECrB-P3DxckHYXJOLWg&oe=6A9AB5E6",
+            "resized_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461624359_758849013023053_2676386066107935282_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=KDxiCbhswvwQ7kNvwHRe2jG&_nc_oc=AdoqCqz2br1xgaTLWRHLIhD26k-03cRb0A5NEVzE8AFoRgmcOvpsvq9cYnCk2OZtzD63k07TbvW1djJFFnAMGMRZ&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQLVpwrR4k4gNq93Evhc_sGmfgUpPwyjGUAm8yTxdGXjnw&oe=6A9AB5E6",
+            "watermarked_resized_image_url": ""
+           },
+           {
+            "body": "\ud83d\udd25 Women\u2019s Kicks Alert! \nNike, Jordan, Adidas - Latest Styles!\n\ud83d\ude80 Shop In-Store & Online! \n\ud83c\udfc6 Highest Rewards! \n\ud83d\udce6 Free Shipping & Pickup!",
+            "cta_type": "SHOP_NOW",
+            "caption": "shiekh.com",
+            "link_description": "Adidas",
+            "link_url": "https://www.shiekh.com/adidas-white-green-womens-stan-smith-fairway-sneaker-white-green.html",
+            "title": "Womens stan smith fairway sneaker white & green",
+            "cta_text": "Shop Now",
+            "video_hd_url": null,
+            "video_preview_image_url": null,
+            "video_sd_url": null,
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null,
+            "image_crops": [],
+            "original_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461856645_1073215264509607_5098367635546985787_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=O7kPum_ioQUQ7kNvwHgYavJ&_nc_oc=Adp9yVhbnRt89T_72_CCZeiBoc_sTRU3hY845hGO9Nx1ufJRAyK2QZCF0u_28EcLQp2gkFSSFzCgb1Q2XNzBj5Qg&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQKn6yxodV91QGOnJTiXghF1BpJrjUxliyIxP5yKjXFkiA&oe=6A9AB418",
+            "resized_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461856645_1073215264509607_5098367635546985787_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=O7kPum_ioQUQ7kNvwHgYavJ&_nc_oc=Adp9yVhbnRt89T_72_CCZeiBoc_sTRU3hY845hGO9Nx1ufJRAyK2QZCF0u_28EcLQp2gkFSSFzCgb1Q2XNzBj5Qg&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQLurj9E32VjkWK1KPXnsKqtP17mISM3ahO06TDH46mcfw&oe=6A9AB418",
+            "watermarked_resized_image_url": ""
+           },
+           {
+            "body": "\ud83d\udd25 Women\u2019s Kicks Alert! \nNike, Jordan, Adidas - Latest Styles!\n\ud83d\ude80 Shop In-Store & Online! \n\ud83c\udfc6 Highest Rewards! \n\ud83d\udce6 Free Shipping & Pickup!",
+            "cta_type": "SHOP_NOW",
+            "caption": "shiekh.com",
+            "link_description": "Nike",
+            "link_url": "https://www.shiekh.com/nike-inc-black-men-s-nike-air-max-270.html",
+            "title": "Air max 270 black",
+            "cta_text": "Shop Now",
+            "video_hd_url": null,
+            "video_preview_image_url": null,
+            "video_sd_url": null,
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null,
+            "image_crops": [],
+            "original_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461777859_1252648682591010_2873656535529209343_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=owE4-Q9sSakQ7kNvwG8Wo1B&_nc_oc=AdozKD8swTMai44MqbXknoGFByQfjBRWa5Y0511kHHk54ylvSCa4MKO4HNXw9aQIdglZ3uPqOhvCVQY1ezn4EDc3&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQKykhgRZJHkRrwWk9k5ZAyJFO7PC_V61czpEEIDHn0kHw&oe=6A9A8CB8",
+            "resized_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461777859_1252648682591010_2873656535529209343_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=owE4-Q9sSakQ7kNvwG8Wo1B&_nc_oc=AdozKD8swTMai44MqbXknoGFByQfjBRWa5Y0511kHHk54ylvSCa4MKO4HNXw9aQIdglZ3uPqOhvCVQY1ezn4EDc3&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQIrCd4jdfep8reAxLbwZ1RmEalLzMtRcV9u0UUILz2I-w&oe=6A9A8CB8",
+            "watermarked_resized_image_url": ""
+           },
+           {
+            "body": "\ud83d\udd25 Women\u2019s Kicks Alert! \nNike, Jordan, Adidas - Latest Styles!\n\ud83d\ude80 Shop In-Store & Online! \n\ud83c\udfc6 Highest Rewards! \n\ud83d\udce6 Free Shipping & Pickup!",
+            "cta_type": "SHOP_NOW",
+            "caption": "shiekh.com",
+            "link_description": "Adidas",
+            "link_url": "https://www.shiekh.com/adidas-white-black-the-women-s-superstar-in-white-and-black-white-black.html",
+            "title": "The women's superstar in white and black white & black",
+            "cta_text": "Shop Now",
+            "video_hd_url": null,
+            "video_preview_image_url": null,
+            "video_sd_url": null,
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null,
+            "image_crops": [],
+            "original_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461840911_2147804755620987_2746556632704997830_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=sOHDAO78FWEQ7kNvwF5a-uy&_nc_oc=Adp_gsB2OAE2IWXha9Hy2H1PdZrIxk7mVTSq7JPS-_JHLWJxMrbQ-uQLu8p3oZce_1s4sTgFvuKqveJz6COq55o6&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQKmOZ12VrfD7uzr9qlwEt6m4-rT_C_rgBDCIKjJwAhXpw&oe=6A9A9A6E",
+            "resized_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461840911_2147804755620987_2746556632704997830_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=sOHDAO78FWEQ7kNvwF5a-uy&_nc_oc=Adp_gsB2OAE2IWXha9Hy2H1PdZrIxk7mVTSq7JPS-_JHLWJxMrbQ-uQLu8p3oZce_1s4sTgFvuKqveJz6COq55o6&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQItmtqbEmrxmDP_0BxZU43YeR-tDyD0bKF4BcGQHIR1hQ&oe=6A9A9A6E",
+            "watermarked_resized_image_url": ""
+           },
+           {
+            "body": "\ud83d\udd25 Women\u2019s Kicks Alert! \nNike, Jordan, Adidas - Latest Styles!\n\ud83d\ude80 Shop In-Store & Online! \n\ud83c\udfc6 Highest Rewards! \n\ud83d\udce6 Free Shipping & Pickup!",
+            "cta_type": "SHOP_NOW",
+            "caption": "shiekh.com",
+            "link_description": "Adidas",
+            "link_url": "https://www.shiekh.com/adidas-ftwwht-ltpink-goldmt-women-s-superstar-white-sneaker-ftwwht-ltpink-goldmt.html",
+            "title": "Superstar",
+            "cta_text": "Shop Now",
+            "video_hd_url": null,
+            "video_preview_image_url": null,
+            "video_sd_url": null,
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null,
+            "image_crops": [],
+            "original_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461834243_1322359475395063_7890254820428228747_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ONhDPLLT6RYQ7kNvwHZZu8z&_nc_oc=AdrB3w2WlgpOVYHeYYIYZ-3N5L9XScumIufe8YtuQXSGkSpufTBr-J4Os0X-_EcGt-cfW2cUNE81sDHbiWEP5pHh&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQIqM9Y0Kdrhxh62vJyuPe5Aci5qpOioZEhaZKWs_oF8wg&oe=6A9AB21A",
+            "resized_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461834243_1322359475395063_7890254820428228747_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ONhDPLLT6RYQ7kNvwHZZu8z&_nc_oc=AdrB3w2WlgpOVYHeYYIYZ-3N5L9XScumIufe8YtuQXSGkSpufTBr-J4Os0X-_EcGt-cfW2cUNE81sDHbiWEP5pHh&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQKn5Z05pNAT9jrDpl0PwRPHVJYrs9FVXT_g7Ab6mv0VbA&oe=6A9AB21A",
+            "watermarked_resized_image_url": ""
+           },
+           {
+            "body": "\ud83d\udd25 Women\u2019s Kicks Alert! \nNike, Jordan, Adidas - Latest Styles!\n\ud83d\ude80 Shop In-Store & Online! \n\ud83c\udfc6 Highest Rewards! \n\ud83d\udce6 Free Shipping & Pickup!",
+            "cta_type": "SHOP_NOW",
+            "caption": "shiekh.com",
+            "link_description": "Nike",
+            "link_url": "https://www.shiekh.com/nike-inc-black-men-s-nike-air-max-270.html",
+            "title": "Air max 270 black",
+            "cta_text": "Shop Now",
+            "video_hd_url": null,
+            "video_preview_image_url": null,
+            "video_sd_url": null,
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null,
+            "image_crops": [],
+            "original_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461732736_1782584655881443_3143330956743519928_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=VDg6DTDcGNoQ7kNvwHkll2g&_nc_oc=AdqKanWiR37KgWsYCw8SceyWeFdDdhcAVLkCEd-oeY59DB3J1fmC77jWozW33ZRnCAE_nUSD5cntUC34m_J-HE9j&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQJcRqBMscK4fXYc_IrPwk8c15xKbAlVtlPCgHduo7o5hQ&oe=6A9AA8B4",
+            "resized_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/461732736_1782584655881443_3143330956743519928_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=VDg6DTDcGNoQ7kNvwHkll2g&_nc_oc=AdqKanWiR37KgWsYCw8SceyWeFdDdhcAVLkCEd-oeY59DB3J1fmC77jWozW33ZRnCAE_nUSD5cntUC34m_J-HE9j&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQINbgbfra2tfhbZtGnONPAzyAXmL0qzoMfrKMIqvi1Gjg&oe=6A9AA8B4",
+            "watermarked_resized_image_url": ""
+           }
+          ],
+          "body": {
+           "text": "\ud83d\udd25 Women\u2019s Kicks Alert! \nNike, Jordan, Adidas - Latest Styles!\n\ud83d\ude80 Shop In-Store & Online! \n\ud83c\udfc6 Highest Rewards! \n\ud83d\udce6 Free Shipping & Pickup!"
+          },
+          "cta_type": "SHOP_NOW",
+          "display_format": "DPA",
+          "link_description": null,
+          "link_url": "https://www.shiekh.com/brands/nike/collection/air-max.html?utm_source=Paid+Social&utm_medium={{placement}}&utm_campaign={{campaign.name}}&utm_content={{site_source_name}}",
+          "images": [],
+          "page_categories": [
+           "Shoes"
+          ],
+          "page_like_count": 83968,
+          "title": "{{product.name}}",
+          "videos": [],
+          "is_reshared": false,
+          "extra_links": [],
+          "extra_texts": [],
+          "extra_images": [],
+          "extra_videos": [],
+          "country_iso_code": null,
+          "brazil_tax_id": null,
+          "additional_info": null,
+          "ec_certificates": []
+         },
+         "has_user_reported": false,
+         "report_count": null,
+         "menu_items": [],
+         "state_media_run_label": null,
+         "page_name": "Shiekh Shoes",
+         "impressions_with_index": {
+          "impressions_text": null,
+          "impressions_index": -1
+         },
+         "gated_type": "ELIGIBLE",
+         "categories": [
+          "UNKNOWN"
+         ],
+         "is_aaa_eligible": false,
+         "contains_digital_created_media": false,
+         "reach_estimate": null,
+         "currency": "",
+         "spend": null,
+         "end_date": 1788073200,
+         "publisher_platform": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER"
+         ],
+         "start_date": 1727766000,
+         "contains_sensitive_content": false,
+         "total_active_time": null,
+         "regional_regulation_data": {
+          "finserv": {
+           "is_deemed_finserv": false,
+           "is_limited_delivery": false
+          },
+          "tw_anti_scam": {
+           "is_limited_delivery": false
+          }
+         },
+         "hide_data_status": "NONE",
+         "fev_info": null,
+         "ad_id": null,
+         "targeted_or_reached_countries": []
+        }
+       ]
+      }
+     },
+     {
+      "node": {
+       "collated_results": [
+        {
+         "ad_archive_id": "1750501179687411",
+         "collation_count": 3,
+         "collation_id": "2016308222279201",
+         "is_active": true,
+         "page_id": "112727500143177",
+         "page_is_deleted": false,
+         "snapshot": {
+          "branded_content": null,
+          "page_id": "112727500143177",
+          "page_is_deleted": false,
+          "page_profile_uri": "https://www.facebook.com/RealWhatnot/",
+          "root_reshared_post": null,
+          "byline": null,
+          "disclaimer_label": null,
+          "page_name": "Whatnot",
+          "page_profile_picture_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/617125974_748667167829273_8092128260939158654_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ZoySbMy4VagQ7kNvwHIcyi1&_nc_oc=Adq6QDqbg9bhGMAJQgW0Ir54t7yAjGO3DfsB6mNQFUKiihRRF23eBAaS1W94jNlbg3eki10LcuSCzhkplMsCnDOT&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQItDpWcLiXxzhgbMG9uLM68hnCq35wmSdBMepDsDeChrw&oe=6A9A999F",
+          "event": null,
+          "caption": "itunes.apple.com",
+          "cta_text": "Install now",
+          "cards": [],
+          "body": {
+           "text": "Yup, you can buy new outfits without breaking the bank. Save on fashion \u26a1\ufe0f Shop on Whatnot!"
+          },
+          "cta_type": "INSTALL_MOBILE_APP",
+          "display_format": "VIDEO",
+          "link_description": null,
+          "link_url": "http://itunes.apple.com/app/id1488269261",
+          "images": [],
+          "page_categories": [
+           "Shopping"
+          ],
+          "page_like_count": 277655,
+          "title": null,
+          "videos": [
+           {
+            "video_hd_url": null,
+            "video_preview_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/615427396_857302770671995_7555358424903945177_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=XqoFoSRYihgQ7kNvwEl5iDI&_nc_oc=AdoopNc0ye1kC9CSia32JT7rCZTuxVjh7A6NI0fOWS1PPeHIvEqdGohXg1Zpi2e0xGfBaluSV3Lbb8iyw5GAO_F0&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQIxmMbQtOayAJ78eAb1SiiKefio_yR4RrbnFcg9RViVaA&oe=6A9A8F11",
+            "video_sd_url": "https://video-arn2-1.xx.fbcdn.net/o1/v/t2/f2/m412/AQNhOltFWE-6qqmwHkN5eM5-62yffNXkkxFlWrFNNFul-rU-ljm9Lx9wyku68QDGPwq4b3b5wbig9e3f0NAKzAtXoJQf4hTgfmq3n6hxxg.mp4?_nc_cat=106&_nc_sid=ef5aa3&_nc_ht=video-arn2-1.xx.fbcdn.net&_nc_ohc=QFyTwGY6GNcQ7kNvwFP0tNN&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzIwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTYwODEwNDkyMDMyMDk1NSwiYXNzZXRfYWdlX2RheXMiOjIyNCwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjE2MSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&_nc_zt=28&oh=00_AQJQnXuPtmtLl8bCoKgJtL1lO84iYr2qRS1habdl9f5HEQ&oe=6A9AAA0C",
+            "watermarked_video_hd_url": null,
+            "watermarked_video_sd_url": null
+           }
+          ],
+          "is_reshared": false,
+          "extra_links": [],
+          "extra_texts": [],
+          "extra_images": [],
+          "extra_videos": [],
+          "country_iso_code": null,
+          "brazil_tax_id": null,
+          "additional_info": null,
+          "ec_certificates": []
+         },
+         "has_user_reported": false,
+         "report_count": null,
+         "menu_items": [],
+         "state_media_run_label": null,
+         "page_name": "Whatnot",
+         "impressions_with_index": {
+          "impressions_text": null,
+          "impressions_index": -1
+         },
+         "gated_type": "ELIGIBLE",
+         "categories": [
+          "UNKNOWN"
+         ],
+         "is_aaa_eligible": false,
+         "contains_digital_created_media": false,
+         "reach_estimate": null,
+         "currency": "",
+         "spend": null,
+         "end_date": 1788073200,
+         "publisher_platform": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "MESSENGER"
+         ],
+         "start_date": 1768723200,
+         "contains_sensitive_content": false,
+         "total_active_time": null,
+         "regional_regulation_data": {
+          "finserv": {
+           "is_deemed_finserv": false,
+           "is_limited_delivery": false
+          },
+          "tw_anti_scam": {
+           "is_limited_delivery": false
+          }
+         },
+         "hide_data_status": "NONE",
+         "fev_info": null,
+         "ad_id": null,
+         "targeted_or_reached_countries": []
+        }
+       ]
+      }
+     },
+     {
+      "node": {
+       "collated_results": [
+        {
+         "ad_archive_id": "976586821561386",
+         "collation_count": 1,
+         "collation_id": "1879311422740659",
+         "is_active": true,
+         "page_id": "208789130441",
+         "page_is_deleted": false,
+         "snapshot": {
+          "branded_content": null,
+          "page_id": "208789130441",
+          "page_is_deleted": false,
+          "page_profile_uri": "https://www.facebook.com/TheStickyBrand/",
+          "root_reshared_post": null,
+          "byline": null,
+          "disclaimer_label": null,
+          "page_name": "The Sticky Brand",
+          "page_profile_picture_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/672095454_978013248065858_8029928170815207163_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=QiveNJFyT1gQ7kNvwGmNHMl&_nc_oc=AdoJuUXjnxSE4Ah3D5UjQZJ-5KjB_L5IuT7IMvWuEHPbrB83Yn9DVyCll-28qGwpmP2m7kp-gR-_iKosLu7m5xVF&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQJgEQbPv7DB2efr40ixJbrJOpwKTRyQIuqVKn-0yyUvbg&oe=6A9AA951",
+          "event": null,
+          "caption": "thestickybrand.com",
+          "cta_text": "Shop now",
+          "cards": [],
+          "body": {
+           "text": "Get the best custom stickers from Sticky Brand!\n\n\u2022 Bombproof material that withstands extreme conditions\n\u2022 24-hour proof turnaround - no waiting!\n\u2022 Custom die-cutting in ANY shape you need\n\nTrusted by Netflix, Nike & Amazon Prime. Limited time offer: \n100 custom 2.5\" stickers for just $25! Don't miss out"
+          },
+          "cta_type": "SHOP_NOW",
+          "display_format": "IMAGE",
+          "link_description": "Get 100, 2.5\" custom stickers for only $25.00 normally priced at $47.00. Made from our signature Bombproof\u2122 material. No order limit.",
+          "link_url": "https://thestickybrand.com/collections/deals/products/100-2-5-custom-vinyl-stickers-for-25-a-6",
+          "images": [
+           {
+            "image_crops": [],
+            "original_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/673748568_1472972171036800_5309916370619277013_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ksSWkfgVEGIQ7kNvwE0wKXJ&_nc_oc=Adrl6c202jLlz6gWfwgdK5Q6VPTo8_XDk31ZSSgkr2MVr2dPKLKpQUfeVDOa4ur5BbySh1MENwic_Z66i5Q4MLI5&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQLXoo7YFkHkNkvTrsGEcZVMe_wx5_CgQT6qFtOmdE2fvw&oe=6A9AAC78",
+            "resized_image_url": "https://scontent-arn2-1.xx.fbcdn.net/v/t39.35426-6/672241136_2043461432868827_1613741477322397387_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=SQE4itIdQX0Q7kNvwG91rIW&_nc_oc=AdotZ-jSSMTWmNilEEbLExylmN2v_vOLwWFRavztotgPKvot8XjcucH6HUwlLqIOrFbMobe9GPgjCEfYM2G73pP5&_nc_zt=14&_nc_ht=scontent-arn2-1.xx&_nc_gid=0DcTo1qitBdZa4h9iYo4RQ&_nc_ss=7b289&oh=00_AQJlLeWvn1WPmDgjp72fq_LUS9zQE9ZcUB_wiHj7_tVRzg&oe=6A9A865F",
+            "watermarked_resized_image_url": ""
+           }
+          ],
+          "page_categories": [
+           "Product/service"
+          ],
+          "page_like_count": 58942,
+          "title": "The ONLY Place I Get Custom Stickers (Here's why...)",
+          "videos": [],
+          "is_reshared": false,
+          "extra_links": [],
+          "extra_texts": [],
+          "extra_images": [],
+          "extra_videos": [],
+          "country_iso_code": null,
+          "brazil_tax_id": null,
+          "additional_info": null,
+          "ec_certificates": []
+         },
+         "has_user_reported": false,
+         "report_count": null,
+         "menu_items": [],
+         "state_media_run_label": null,
+         "page_name": "The Sticky Brand",
+         "impressions_with_index": {
+          "impressions_text": null,
+          "impressions_index": -1
+         },
+         "gated_type": "ELIGIBLE",
+         "categories": [
+          "UNKNOWN"
+         ],
+         "is_aaa_eligible": false,
+         "contains_digital_created_media": false,
+         "reach_estimate": null,
+         "currency": "",
+         "spend": null,
+         "end_date": 1788073200,
+         "publisher_platform": [
+          "FACEBOOK",
+          "INSTAGRAM",
+          "AUDIENCE_NETWORK",
+          "MESSENGER"
+         ],
+         "start_date": 1776236400,
+         "contains_sensitive_content": false,
+         "total_active_time": null,
+         "regional_regulation_data": {
+          "finserv": {
+           "is_deemed_finserv": false,
+           "is_limited_delivery": false
+          },
+          "tw_anti_scam": {
+           "is_limited_delivery": false
+          }
+         },
+         "hide_data_status": "NONE",
+         "fev_info": null,
+         "ad_id": null,
+         "targeted_or_reached_countries": []
+        }
+       ]
+      }
+     }
+    ],
+    "page_info": {
+     "end_cursor": "FIXTURECURSOR",
+     "has_next_page": true
+    }
+   }
+  }
+ }
+}

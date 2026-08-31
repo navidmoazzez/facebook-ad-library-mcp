@@ -1,0 +1,319 @@
+# Facebook Ad Library MCP
+
+Give any AI agent read access to every ad running on Facebook, Instagram, Messenger, Threads and Audience Network. Free, no API key, any country.
+
+Meta's Ad Library is the largest public archive of advertising creative in the world, and it is completely open. This puts it inside your agent.
+
+---
+
+## 1. What you can ask it 💬
+
+- "What ads is Ridge running right now, and which has been live longest?"
+- "Show me every hook Athletic Greens is testing this month, grouped by angle."
+- "Compare two competitors: who runs more creative, and who refreshes it faster?"
+- "Find advertisers running cold plunge ads in the UK, ranked by ad count."
+- "Pull every ad from this Page and tell me which landing pages they send to."
+- "What changed for this advertiser since last week?"
+- "Which of these are video and which are static? Give me the video URLs."
+- "This ad has run 8 months. Read the copy and tell me why it works."
+- "What is this German brand spending, and who is paying for it?"
+
+---
+
+## 2. Quick install ⚡
+
+Node 20 or newer. Nothing else.
+
+```bash
+npx -y @thenavidm/facebook-ad-library-mcp --version
+```
+
+> **Not published yet.** The command above will not work until the first
+> release. Until then, clone the repo and run `npm install && npm run build`,
+> then point your client at `node /absolute/path/to/dist/index.js`.
+
+The free backend drives a real browser, so install Chromium once:
+
+```bash
+npx playwright install chromium
+```
+
+That is the whole install. No account, no API key, no credential.
+
+---
+
+## 3. Setup 🔑
+
+**There is nothing to set up.** The default backend needs no key and no account.
+
+Everything below is optional, and only worth doing if you hit a specific limit.
+
+### Optional: a provider key, for speed and scale
+
+The free backend runs Chromium on your machine, so a search takes 30 to 60 seconds and Meta will rate limit you if you hammer it. Two hosted providers remove both problems for money.
+
+| Backend | Roughly | Adds |
+|---|---|---|
+| `scrapecreators` | $1.88 per 1,000 ads | fast, serverless, `transcribe_ad` |
+| `apify` | $3.40 to $5.80 per 1,000 ads | fast, serverless, e-commerce enrichment |
+
+Set `FBADS_BACKEND` and the matching key in your client config. Every tool behaves identically on all three.
+
+### Optional: EU spend and reach
+
+Meta's official Ad Library API publishes real spend, impressions and demographics. It is free, and it covers political and issue ads worldwide plus every ad delivered in the EU.
+
+1. Go to [developers.facebook.com](https://developers.facebook.com) and create an app.
+2. Generate an access token for it.
+3. Set it as `META_ADS_ARCHIVE_TOKEN`.
+
+`get_eu_transparency` then returns data. Everything else works without it.
+
+---
+
+## 4. Connect your client 🔌
+
+### Claude Code
+
+```bash
+claude mcp add facebook-ads -- npx -y @thenavidm/facebook-ad-library-mcp@latest
+```
+
+`--scope user` makes it available in every project rather than the current one.
+
+With a provider key:
+
+```bash
+claude mcp add facebook-ads \
+  -e FBADS_BACKEND=scrapecreators \
+  -e SCRAPECREATORS_API_KEY=xxx \
+  -- npx -y @thenavidm/facebook-ad-library-mcp@latest
+```
+
+### Claude Desktop
+
+| Platform | Path |
+|---|---|
+| macOS | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| Windows | `%APPDATA%\Claude\claude_desktop_config.json` |
+
+```json
+{
+  "mcpServers": {
+    "facebook-ads": {
+      "command": "npx",
+      "args": ["-y", "@thenavidm/facebook-ad-library-mcp@latest"]
+    }
+  }
+}
+```
+
+> **Tip**
+> Claude Desktop does not inherit your shell PATH. If `npx` is not found, use
+> the absolute path from `which npx`.
+
+Quit Claude Desktop completely and reopen it.
+
+### claude.ai on the web
+
+claude.ai runs connectors from Anthropic's cloud, not from your machine, so it needs a public HTTPS URL.
+
+```bash
+npx -y @thenavidm/facebook-ad-library-mcp@latest --http --port 8000
+```
+
+Host that somewhere with a public HTTPS URL, then in claude.ai: **Customize**, **Connectors**, **+**, **Add custom connector**. Paste the URL and click **Add**.
+
+Note the free backend needs a real browser, so whatever hosts it must be able to run Chromium. A provider backend is the easier choice for a hosted deployment.
+
+### Cursor
+
+`.cursor/mcp.json`, same JSON shape as Claude Desktop, key `mcpServers`.
+
+### Windsurf
+
+`~/.codeium/windsurf/mcp_config.json`, key `mcpServers`.
+
+### VS Code
+
+`.vscode/mcp.json`. The key is **`servers`**, not `mcpServers`, and each entry takes `"type": "stdio"`.
+
+```json
+{
+  "servers": {
+    "facebook-ads": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@thenavidm/facebook-ad-library-mcp@latest"]
+    }
+  }
+}
+```
+
+### Codex CLI
+
+`~/.codex/config.toml`:
+
+```toml
+[mcp_servers.facebook-ads]
+command = "npx"
+args = ["-y", "@thenavidm/facebook-ad-library-mcp@latest"]
+```
+
+### Gemini CLI
+
+`~/.gemini/settings.json`, key `mcpServers`.
+
+### Everything else
+
+Any stdio MCP client takes the same three things: the command `npx`, the args, and an optional env block.
+
+---
+
+## 5. Check it worked 🩺
+
+```bash
+npx -y @thenavidm/facebook-ad-library-mcp@latest doctor
+```
+
+It launches a browser, runs a real search, and tells you whether ads came back.
+
+| Symptom | Fix |
+|---|---|
+| "Chromium will not launch" | `npx playwright install chromium` |
+| "Meta served a captcha" | Wait a few minutes, or set a provider key |
+| Empty results on every search | Meta is rate limiting this machine |
+| Server missing from the client | `npx` not on the client's PATH, use an absolute path |
+
+---
+
+## 6. Tools 🛠️
+
+Every tool is read-only. This server cannot post, cannot spend, and cannot reach an ad account.
+
+| Tool | What it does |
+|---|---|
+| `search_ads` | Keyword search, or every ad from one Page. The main one. |
+| `list_advertisers` | Resolve a brand name to Page IDs, ranked by ad count. |
+| `get_ad` | One ad in full: every creative, every copy variant. |
+| `diff_advertiser` | What an advertiser started and stopped running since last look. |
+| `get_eu_transparency` | Spend, reach and demographics. EU and political ads only. |
+| `transcribe_ad` | Speech to text on a video ad. Needs the `scrapecreators` backend. |
+| `backend_status` | Which backend is active and whether it costs money. |
+| `ad_library_url` | Turn filters into a URL a person can open and check. |
+
+Plus two prompts, `competitor-teardown` and `creative-angles`, and two resources so a client can read the config and the Ad Library's own concepts without spending a tool call.
+
+`diff_advertiser` is the one worth knowing about. Every other tool answers "what is running". That one answers "what changed", which needs a memory of last time. The first call records a baseline.
+
+---
+
+## 7. How it works ⚙️
+
+Worth knowing, because it explains what you get back.
+
+The Ad Library is a React app. Meta hands it every ad as structured JSON. The obvious way to scrape it is to let the page render, flatten it to text, and pull the fields back out with regular expressions.
+
+That round trip loses most of the ad. You get one creative instead of the six in the carousel, a redirect instead of the real landing page, and an empty platform list because those render as icons rather than text.
+
+**This server reads the JSON the page was already given.** Same browser, same cost, no parsing step.
+
+It reads two places, because Meta uses two: the first page of results is embedded in the document, and later pages arrive over the wire as you scroll. Reading only the second is why scrapers return nothing on the first search.
+
+What that buys you, per ad:
+
+| | |
+|---|---|
+| Creatives | all of them, with HD and SD video URLs |
+| Platforms | `Facebook, Instagram, Messenger, Threads, Audience Network` |
+| Destination | the real URL, query string intact |
+| Call to action | `SHOP_NOW`, from the payload rather than matched against a label list |
+| Pagination | a real cursor, plus Meta's own total result count |
+| Also | page likes, ad format, variant count, EU spend and reach |
+
+---
+
+## 8. Limits, honestly 🧭
+
+**No performance data exists.** Conversions, revenue, cost per acquisition, return on ad spend: none of it is public for another advertiser, from any source, at any price.
+
+What you can infer is longevity. An ad running six months is probably working, because advertisers turn off ads that lose money. That is a hypothesis worth acting on, and it is not a measurement. The server's own instructions tell the model not to report it as one.
+
+**Spend and reach are usually null.** They exist only for ads delivered in the EU, under the Digital Services Act, and for political ads anywhere. A null on a US ecommerce ad is the correct answer, not a bug.
+
+**The free backend gets rate limited.** It drives a real browser against a public site. If searches start coming back empty, wait. That is also the point where a provider key starts paying for itself.
+
+**Creative URLs expire.** Meta's CDN links are short-lived. Download what you want to keep, when you find it.
+
+This project is not affiliated with, endorsed by, or connected to Meta.
+
+---
+
+## FAQ ❓
+
+**What is an MCP server?**
+Model Context Protocol is a standard way to give an AI assistant real tools. Once this is connected, your assistant can search the Ad Library itself instead of you copying results into a chat.
+
+**Do I need a Facebook account?**
+No. The Ad Library is public and this reads it without signing in to anything.
+
+**Does it cost money?**
+Not by default. The free backend runs on your machine. The two provider backends bill per ad and are opt-in.
+
+**Why is it slow?**
+The free backend launches a real browser and scrolls a page, which takes 30 to 60 seconds. A provider backend answers in about a second, for money.
+
+**Can I see how much a competitor spends?**
+Only for EU-delivered ads and political ads, through `get_eu_transparency`. For a US commercial advertiser that number is not published anywhere.
+
+**Can it tell me which of their ads performs best?**
+No, and nothing can. You can see which have run longest, which is a reasonable proxy and not the same thing.
+
+**Why does an ad body say `{{product.brand}}`?**
+It is a catalogue ad. Meta fills those tokens per product at delivery. That is the real ad text.
+
+**Can I run it on a server?**
+Yes, with `--http`. The free backend needs Chromium available; a provider backend is easier to host.
+
+**Is scraping the Ad Library allowed?**
+The Ad Library is published deliberately, for transparency, and is open without login. This reads it the way a browser does. You are responsible for your own use.
+
+**Which countries work?**
+All of them. Pass any two-letter country code.
+
+---
+
+## Dependencies
+
+| Package | Licence | Why |
+|---|---|---|
+| [@modelcontextprotocol/sdk](https://github.com/modelcontextprotocol/typescript-sdk) | MIT | the MCP protocol implementation |
+| [zod](https://github.com/colinhacks/zod) | MIT | tool argument schemas |
+| [playwright](https://github.com/microsoft/playwright) | Apache-2.0 | drives Chromium for the free backend, optional |
+
+---
+
+## About the author 👋
+
+Navid Moazzez is a leading AI business strategist and the host of the AI Creator Summit, watched by 100,000+ creators. He helps creators and founders master AI and build their own AI Operating System (AI OS) to automate their business and life. This MCP server is one piece of that system.
+
+**Links**
+
+- Personal website: [navid.me](https://navid.me)
+- Store: [navid.bio](https://navid.bio)
+- AI OS Starter Kit: [aios.guide](https://aios.guide)
+- AI OS Workshop: [aiosworkshop.com](https://aiosworkshop.com)
+- AI Creator OS: [aicreatoros.co](https://aicreatoros.co)
+- AI Tools Library: [aitoolslibrary.io](https://aitoolslibrary.io)
+- Video Gear Guide: [videogear.guide](https://videogear.guide)
+- Navid Media: [navid.media](https://navid.media)
+- YouTube: [@thenavidm](https://youtube.com/@thenavidm?sub_confirmation=1) and [@thenavidai](https://youtube.com/@thenavidai?sub_confirmation=1)
+- X: [@thenavidm](https://x.com/thenavidm)
+- Instagram: [@thenavidm](https://instagram.com/thenavidm)
+- LinkedIn: [thenavidm](https://linkedin.com/in/thenavidm)
+
+## Licence
+
+MIT. See [LICENSE](LICENSE).
+
+© 2026 NM Media. Made with ❤️ by [Navid Moazzez](https://navid.me).
