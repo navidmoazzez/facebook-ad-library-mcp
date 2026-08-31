@@ -31,6 +31,12 @@ const MEDIA = {
   none: "NONE",
 } as const;
 
+// `ad_type` is the one parameter that must stay lowercase. Sending "ALL" is
+// accepted and then silently collapses a 14,000 result search to a single
+// unrelated ad, with no error. Verified against the live API on 2026-09-01.
+// Our vocabulary is already Meta's lowercase spelling, so it passes straight
+// through rather than being mapped.
+
 type Json = Record<string, unknown>;
 
 /** Their cursor field is undocumented, so accept any plausible spelling. */
@@ -130,7 +136,7 @@ export class ScrapeCreatorsBackend implements Backend {
       : await this.get("/v1/facebook/adLibrary/search/ads", {
           ...common,
           query: params.query,
-          ad_type: params.adType === "political_and_issue_ads" ? "POLITICAL_AND_ISSUE_ADS" : "ALL",
+          ad_type: params.adType ?? "all",
         });
 
     const harvest = parsePayloads(payload);

@@ -2,11 +2,20 @@
 
 | Component | Version | Last Updated |
 |-----------|---------|--------------|
-| facebook-ad-library-mcp | 0.1.0 | 2026-08-31 |
+| facebook-ad-library-mcp | 0.1.1 | 2026-09-01 |
 
 ---
 
 What changed, newest first, in terms of what it means for someone using it.
+
+## 0.1.1
+
+Fixes the ScrapeCreators backend, which was returning one unrelated ad instead
+of the thousands that matched.
+
+It sent `ad_type=ALL`. Their API accepts that and then silently collapses the
+result set to a single row rather than erroring, so the failure looked like an
+empty search. The parameter has to stay lowercase. Verified against the live API.
 
 ## 0.1.0
 
