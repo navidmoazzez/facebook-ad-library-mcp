@@ -19,8 +19,12 @@ export type ToolContext = {
   store: SnapshotStore;
 };
 
+export type ContentBlock =
+  | { type: "text"; text: string }
+  | { type: "image"; data: string; mimeType: string };
+
 export type ToolResult = {
-  content: { type: "text"; text: string }[];
+  content: ContentBlock[];
   structuredContent?: Record<string, unknown>;
   isError?: boolean;
 };
@@ -35,7 +39,7 @@ export type ToolResult = {
  */
 export function ok(data: unknown, structured = true): ToolResult {
   const text = typeof data === "string" ? data : JSON.stringify(data, null, 2);
-  const result: ToolResult = { content: [{ type: "text", text }] };
+  const result: ToolResult = { content: [{ type: "text" as const, text }] };
   if (structured && data && typeof data === "object" && !Array.isArray(data)) {
     result.structuredContent = data as Record<string, unknown>;
   }
@@ -50,6 +54,23 @@ export function ok(data: unknown, structured = true): ToolResult {
  * which is the difference between a correct retry and a give-up. Verified
  * against a real client handshake rather than assumed.
  */
+/**
+ * A result carrying real images alongside the text.
+ *
+ * The text block still goes first so a client that ignores images, and the
+ * model itself, still get the context: which advertiser, which ad, what the
+ * copy said. The images follow in the same order they are described.
+ */
+export function okWithImages(data: unknown, images: { data: string; mimeType: string }[]): ToolResult {
+  const text = typeof data === "string" ? data : JSON.stringify(data, null, 2);
+  return {
+    content: [
+      { type: "text" as const, text },
+      ...images.map((i) => ({ type: "image" as const, data: i.data, mimeType: i.mimeType })),
+    ],
+  };
+}
+
 export function fail(error: unknown): ToolResult {
   const payload =
     error instanceof AdLibraryError
@@ -100,6 +121,12 @@ export type ToolSpec<S extends ZodRawShape, O extends ZodRawShape = ZodRawShape>
   schema: S;
   /** Declared so clients get `structuredContent` rather than a JSON string. */
   outputSchema?: O;
+  /**
+   * Set when the handler builds its own result, for the tools that return
+   * something other than JSON. Images, mainly: those go back as content blocks
+   * and cannot be serialised into one object.
+   */
+  returnsContent?: boolean;
   /**
    * Every tool in this server reads a public archive. None of them writes, so
    * `readOnlyHint` is true throughout and there is no confirm gating to apply.
@@ -154,7 +181,9 @@ export function register(
     // than in every tool definition.
     (async (args: Record<string, unknown>) => {
       try {
-        return ok(await spec.handler(args as never, contextFor()), Boolean(spec.outputSchema));
+        const result = await spec.handler(args as never, contextFor());
+        if (spec.returnsContent) return result as ToolResult;
+        return ok(result, Boolean(spec.outputSchema));
       } catch (error) {
         return fail(error);
       }

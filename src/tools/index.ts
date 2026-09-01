@@ -7,9 +7,11 @@ import { SEARCH_TOOLS } from "./search.js";
 import { SESSION_TOOLS } from "./session.js";
 import { TRACK_TOOLS } from "./track.js";
 import { TRANSPARENCY_TOOLS } from "./transparency.js";
+import { VIEW_TOOLS } from "./view.js";
 
 export const ALL_TOOLS: AnyToolSpec[] = [
   ...SEARCH_TOOLS,
+  ...VIEW_TOOLS,
   ...TRACK_TOOLS,
   ...TRANSPARENCY_TOOLS,
   ...SESSION_TOOLS,

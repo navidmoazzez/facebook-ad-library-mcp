@@ -10,6 +10,9 @@
 export type Creative = {
   kind: "image" | "video";
   imageUrl?: string;
+  /** Meta serves a smaller copy alongside the original. Preferred when showing
+   *  a creative to a model, because base64 inflates bytes by about a third. */
+  imageResizedUrl?: string;
   videoHdUrl?: string;
   videoSdUrl?: string;
   previewImageUrl?: string;

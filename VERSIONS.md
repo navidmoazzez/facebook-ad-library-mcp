@@ -2,11 +2,31 @@
 
 | Component | Version | Last Updated |
 |-----------|---------|--------------|
-| facebook-ad-library-mcp | 0.3.0 | 2026-09-01 |
+| facebook-ad-library-mcp | 0.4.0 | 2026-09-01 |
 
 ---
 
 What changed, newest first, in terms of what it means for someone using it.
+
+## 0.4.0
+
+**The model can now look at the ad.** `view_ad_creative` returns the real images
+as MCP image blocks, so an agent sees the pixels instead of reading a description
+of them. No API key and no dependency: the bytes are already on Meta's CDN and
+the protocol already carries images.
+
+This matters more than it sounds. A skincare ad in testing described a skin
+microbiome in its body copy; the image was a product shot with a screenshot of a
+Facebook comment pasted under it as social proof. The persuasion was entirely in
+the picture, and no amount of reading the text would have found it.
+
+Meta's own smaller copy of each image is preferred where it exists, since base64
+inflates bytes by about a third. Six images per call, oversized ones skipped and
+reported rather than silently dropped.
+
+Video is deliberately not included. A model cannot ingest video directly, and
+sampling frames throws away pacing, cuts and audio, which for an ad is most of
+the craft.
 
 ## 0.3.0
 

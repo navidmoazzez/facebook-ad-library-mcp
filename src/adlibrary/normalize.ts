@@ -97,6 +97,7 @@ function creativesFrom(snapshot: Json): Creative[] {
     out.push({
       kind: "image",
       imageUrl: str(image["original_image_url"]) ?? str(image["resized_image_url"]),
+      imageResizedUrl: str(image["resized_image_url"]),
     });
   }
 
@@ -115,6 +116,7 @@ function creativesFrom(snapshot: Json): Creative[] {
     out.push({
       kind: hd || sd ? "video" : "image",
       imageUrl: str(card["original_image_url"]) ?? str(card["resized_image_url"]),
+      imageResizedUrl: str(card["resized_image_url"]),
       videoHdUrl: hd,
       videoSdUrl: sd,
       previewImageUrl: str(card["video_preview_image_url"]),
