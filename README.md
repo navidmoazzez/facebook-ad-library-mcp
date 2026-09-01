@@ -277,47 +277,77 @@ What you can infer is longevity. An ad running six months is probably working, b
 
 ## FAQ ❓
 
-**What is an MCP server?**
+<details>
+<summary><b>What is an MCP server?</b></summary>
 
-Model Context Protocol is a standard way to give an AI assistant real tools. Once this is connected, your assistant can search the Ad Library itself instead of you copying results into a chat.
+An MCP server is a standard way to give an AI assistant real tools. Once this is connected, your assistant can search the Ad Library itself instead of you copying results into a chat.
 
-**Do I need a Facebook account?**
+</details>
 
-No. The Ad Library is public and this reads it without signing in to anything.
+<details>
+<summary><b>Do I need a Facebook account?</b></summary>
 
-**Does it cost money?**
+You do not need one. The Ad Library is public and this reads it without signing in to anything.
 
-Not by default. The free backend runs on your machine. The two provider backends bill per ad and are opt-in.
+</details>
 
-**Why is it slow?**
+<details>
+<summary><b>Does it cost money?</b></summary>
+
+It is free by default. The free backend runs on your machine. The two provider backends bill per ad and are opt-in.
+
+</details>
+
+<details>
+<summary><b>Why is it slow?</b></summary>
 
 The free backend launches a real browser and scrolls a page, which takes 30 to 60 seconds. A provider backend answers in about a second, for money.
 
-**Can I see how much a competitor spends?**
+</details>
+
+<details>
+<summary><b>Can I see how much a competitor spends?</b></summary>
 
 Only for EU-delivered ads and political ads, through `get_eu_transparency`. For a US commercial advertiser that number is not published anywhere.
 
-**Can it tell me which of their ads performs best?**
+</details>
 
-No, and nothing can. You can see which have run longest, which is a reasonable proxy and not the same thing.
+<details>
+<summary><b>Can it tell me which of their ads performs best?</b></summary>
 
-**Why does an ad body say `{{product.brand}}`?**
+It does not. and nothing can. You can see which have run longest, which is a reasonable proxy and not the same thing.
+
+</details>
+
+<details>
+<summary><b>Why does an ad body say `{{product.brand}}`?</b></summary>
 
 It is a catalogue ad. Meta fills those tokens per product at delivery. That is the real ad text.
 
-**Can I run it on a server?**
+</details>
 
-Yes, with `--http`. The free backend needs Chromium available; a provider backend is easier to host.
+<details>
+<summary><b>Can I run it on a server?</b></summary>
 
-**Is scraping the Ad Library allowed?**
+It does. with `--http`. The free backend needs Chromium available; a provider backend is easier to host.
+
+</details>
+
+<details>
+<summary><b>Is scraping the Ad Library allowed?</b></summary>
 
 The Ad Library is published deliberately, for transparency, and is open without login. This reads it the way a browser does. You are responsible for your own use.
 
-**Which countries work?**
+</details>
+
+<details>
+<summary><b>Which countries work?</b></summary>
 
 All of them. Pass any two-letter country code.
 
 ---
+
+</details>
 
 ## Dependencies
 
@@ -328,6 +358,10 @@ All of them. Pass any two-letter country code.
 | [playwright](https://github.com/microsoft/playwright) | Apache-2.0 | drives Chromium for the free backend, optional |
 
 ---
+
+## Questions
+
+Run into a problem or have a question? [Open an issue](https://github.com/navidmoazzez/facebook-ad-library-mcp/issues) and I will help.
 
 ## About the author 👋
 
