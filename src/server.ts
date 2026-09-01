@@ -16,7 +16,7 @@ import { SnapshotStore } from "./store/snapshots.js";
 import { ALL_TOOLS } from "./tools/index.js";
 import { register, type ToolContext } from "./tools/kit.js";
 
-export const VERSION = "0.2.0";
+export const VERSION = "0.3.0";
 
 export const INSTRUCTIONS = `Reads Meta's public Ad Library: every ad running on Facebook, Instagram, Messenger, Threads and Audience Network, for any advertiser, in any country.
 

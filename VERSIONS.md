@@ -2,11 +2,26 @@
 
 | Component | Version | Last Updated |
 |-----------|---------|--------------|
-| facebook-ad-library-mcp | 0.2.0 | 2026-09-01 |
+| facebook-ad-library-mcp | 0.3.0 | 2026-09-01 |
 
 ---
 
 What changed, newest first, in terms of what it means for someone using it.
+
+## 0.3.0
+
+**Results now arrive as real objects.** Every tool declares an output schema and
+returns `structuredContent`, so a client can render a table or a card instead of
+printing a JSON string. This was promised in 0.1.0 and not delivered.
+
+**Searches are about three times faster.** The browser backend waited on fixed
+timers: nine seconds to hydrate, four per scroll, whether or not the page was
+ready. It now waits for the markup carrying the results and for the response each
+scroll triggers. A test search went from 36 seconds to 10.
+
+**An empty search retries instead of giving up.** Meta rate limits by IP and
+recovers within a minute. Returning nothing with a note telling a human to wait
+was no help to an agent. `FBADS_RETRIES` controls it, default 1.
 
 ## 0.2.0
 
