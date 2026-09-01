@@ -36,10 +36,10 @@
   "homepage": "https://navid.me",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thenavidm/facebook-ad-library-mcp.git"
+    "url": "git+https://github.com/navidmoazzez/facebook-ad-library-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/thenavidm/facebook-ad-library-mcp/issues"
+    "url": "https://github.com/navidmoazzez/facebook-ad-library-mcp/issues"
   },
   "keywords": [
     "mcp",

@@ -1,10 +1,10 @@
 # Facebook Ad Library MCP
 
-[![Stars](https://img.shields.io/github/stars/thenavidm/facebook-ad-library-mcp?style=flat&logo=github&label=Stars)](https://github.com/thenavidm/facebook-ad-library-mcp)
+[![Stars](https://img.shields.io/github/stars/navidmoazzez/facebook-ad-library-mcp?style=flat&logo=github&label=Stars)](https://github.com/navidmoazzez/facebook-ad-library-mcp)
 [![License](https://img.shields.io/badge/License-MIT-blue)](./LICENSE)
 [![npm](https://img.shields.io/npm/v/@thenavidm/facebook-ad-library-mcp?color=orange&label=npm)](https://www.npmjs.com/package/@thenavidm/facebook-ad-library-mcp)
 [![Downloads](https://img.shields.io/npm/dm/@thenavidm/facebook-ad-library-mcp?color=green&label=downloads)](https://www.npmjs.com/package/@thenavidm/facebook-ad-library-mcp)
-[![CI](https://img.shields.io/github/actions/workflow/status/thenavidm/facebook-ad-library-mcp/ci.yml?branch=main&label=CI)](https://github.com/thenavidm/facebook-ad-library-mcp/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/navidmoazzez/facebook-ad-library-mcp/ci.yml?branch=main&label=CI)](https://github.com/navidmoazzez/facebook-ad-library-mcp/actions)
 [![YouTube](https://img.shields.io/badge/YouTube-@thenavidm-red?logo=youtube&logoColor=white)](https://youtube.com/@thenavidm?sub_confirmation=1)
 [![X](https://img.shields.io/badge/X-@thenavidm-black?logo=x)](https://x.com/thenavidm)
 
