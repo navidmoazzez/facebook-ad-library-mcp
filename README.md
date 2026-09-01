@@ -1,3 +1,5 @@
+<img src="https://cdn.navid.media/connectors/facebook-ad-library-icon.png" alt="Facebook Ad Library" width="88">
+
 # Facebook Ad Library MCP
 
 [![Stars](https://img.shields.io/github/stars/navidmoazzez/facebook-ad-library-mcp?style=flat&logo=github&label=Stars)](https://github.com/navidmoazzez/facebook-ad-library-mcp)
