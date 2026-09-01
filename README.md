@@ -38,8 +38,6 @@ Built by [Navid Moazzez](https://navid.me?utm_source=github&utm_medium=readme&ut
 | 8 | [Limits, honestly](#8-limits-honestly-) | What no source can tell you |
 | | [FAQ](#faq-) | |
 
----
-
 ## 1. What you can ask it 💬
 
 - "What ads is Ridge running right now, and which has been live longest?"
@@ -51,8 +49,6 @@ Built by [Navid Moazzez](https://navid.me?utm_source=github&utm_medium=readme&ut
 - "Which of these are video and which are static? Give me the video URLs."
 - "This ad has run 8 months. Read the copy and tell me why it works."
 - "What is this German brand spending, and who is paying for it?"
-
----
 
 ## 2. Quick install ⚡
 
@@ -69,8 +65,6 @@ npx playwright install chromium
 ```
 
 That is the whole install. No account, no API key, no credential.
-
----
 
 ## 3. Setup 🔑
 
@@ -98,8 +92,6 @@ Meta's official Ad Library API publishes real spend, impressions and demographic
 3. Set it as `META_ADS_ARCHIVE_TOKEN`.
 
 `get_eu_transparency` then returns data. Everything else works without it.
-
----
 
 ## 4. Connect your client 🔌
 
@@ -198,8 +190,6 @@ args = ["-y", "@thenavidm/facebook-ad-library-mcp@latest"]
 
 Any stdio MCP client takes the same three things: the command `npx`, the args, and an optional env block.
 
----
-
 ## 5. Check it worked 🩺
 
 ```bash
@@ -214,8 +204,6 @@ It launches a browser, runs a real search, and tells you whether ads came back.
 | "Meta served a captcha" | Wait a few minutes, or set a provider key |
 | Empty results on every search | Meta is rate limiting this machine |
 | Server missing from the client | `npx` not on the client's PATH, use an absolute path |
-
----
 
 ## 6. Tools 🛠️
 
@@ -235,8 +223,6 @@ Every tool is read-only. This server cannot post, cannot spend, and cannot reach
 Plus two prompts, `competitor-teardown` and `creative-angles`, and two resources so a client can read the config and the Ad Library's own concepts without spending a tool call.
 
 `diff_advertiser` is the one worth knowing about. Every other tool answers "what is running". That one answers "what changed", which needs a memory of last time. The first call records a baseline.
-
----
 
 ## 7. How it works ⚙️
 
@@ -261,8 +247,6 @@ What that buys you, per ad:
 | Pagination | a real cursor, plus Meta's own total result count |
 | Also | page likes, ad format, variant count, EU spend and reach |
 
----
-
 ## 8. Limits, honestly 🧭
 
 **No performance data exists.** Conversions, revenue, cost per acquisition, return on ad spend: none of it is public for another advertiser, from any source, at any price.
@@ -274,8 +258,6 @@ What you can infer is longevity. An ad running six months is probably working, b
 **The free backend gets rate limited.** It drives a real browser against a public site. If searches start coming back empty, wait. That is also the point where a provider key starts paying for itself.
 
 **Creative URLs expire.** Meta's CDN links are short-lived. Download what you want to keep, when you find it.
-
----
 
 ## FAQ ❓
 
@@ -347,8 +329,6 @@ The Ad Library is published deliberately, for transparency, and is open without 
 
 All of them. Pass any two-letter country code.
 
----
-
 </details>
 
 ## Dependencies
@@ -358,8 +338,6 @@ All of them. Pass any two-letter country code.
 | [@modelcontextprotocol/sdk](https://github.com/modelcontextprotocol/typescript-sdk) | MIT | the MCP protocol implementation |
 | [zod](https://github.com/colinhacks/zod) | MIT | tool argument schemas |
 | [playwright](https://github.com/microsoft/playwright) | Apache-2.0 | drives Chromium for the free backend, optional |
-
----
 
 ## Questions
 
