@@ -73,7 +73,7 @@ export function buildServer(config: Config = loadConfig()): BuiltServer {
 /**
  * Resources: what a model needs to know about the Ad Library itself.
  *
- * Trimmed to what actually changes behaviour. A model that knows spend is
+ * Trimmed to what actually changes behavior. A model that knows spend is
  * EU-only stops reporting nulls as an error, and one that knows what a Page ID
  * is asks for the right thing first.
  */

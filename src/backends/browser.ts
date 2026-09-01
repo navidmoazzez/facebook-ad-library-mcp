@@ -137,7 +137,7 @@ export class BrowserBackend implements Backend {
       /* Wait for the markup that carries the inlined results, but never return
          sooner than the page needs.
 
-         Meta answers an unrecognised client with a challenge page that reloads
+         Meta answers an unrecognized client with a challenge page that reloads
          itself. That destroys the execution context, so this rejects almost
          immediately rather than timing out, and simply catching it meant reading
          an empty page a third of a second after navigating. So the elapsed time

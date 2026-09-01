@@ -351,7 +351,7 @@ All of them. Pass any two-letter country code.
 
 ## Dependencies
 
-| Package | Licence | Why |
+| Package | License | Why |
 |---|---|---|
 | [@modelcontextprotocol/sdk](https://github.com/modelcontextprotocol/typescript-sdk) | MIT | the MCP protocol implementation |
 | [zod](https://github.com/colinhacks/zod) | MIT | tool argument schemas |

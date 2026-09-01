@@ -1,7 +1,7 @@
 {
   "name": "@thenavidm/facebook-ad-library-mcp",
   "version": "0.4.0",
-  "description": "MCP server for Meta's public Ad Library. Reads the real ad JSON rather than scraping rendered text, so it returns every creative, the true landing URL and the platform list. Free by default with no API key, with optional provider backends. Works with Claude Code, Claude Desktop, Cursor, Windsurf and any MCP-compatible client.",
+  "description": "Facebook Ad Library MCP server for Claude Code and AI agents. Reads Meta's public ad data directly, so creative, spend ranges and run dates come back as structured records.",
   "type": "module",
   "main": "./dist/index.js",
   "bin": {
