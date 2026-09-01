@@ -1,9 +1,11 @@
 # The Sponsor button on this repository.
 #
-# Uncomment the github line once GitHub Sponsors is enrolled at
-# https://github.com/sponsors. Enrolment needs bank and tax details, so it
-# cannot be done from a script. Until then the custom link below is what the
-# button opens.
+# buy_me_a_coffee is a native field, so GitHub renders it with the Buy Me a
+# Coffee icon rather than a plain link.
+buy_me_a_coffee: navidm
+
+# Uncomment once GitHub Sponsors is enrolled at https://github.com/sponsors.
+# Enrolment needs bank and tax details, so it cannot be done from a script.
 # github: navidmoazzez
 
 custom: ["https://navid.me?utm_source=github&utm_medium=sponsor&utm_campaign=facebook-ad-library-mcp"]
