@@ -16,9 +16,9 @@ export function createBackend(config: Config): Backend {
         scrollWaitMs: config.scrollWaitMs,
       });
     case "scrapecreators":
-      return new ScrapeCreatorsBackend(config.scrapeCreatorsKey ?? "");
+      return new ScrapeCreatorsBackend(config.scrapeCreatorsKey ?? "", undefined, config.cacheDays);
     case "apify":
-      return new ApifyBackend(config.apifyToken ?? "");
+      return new ApifyBackend(config.apifyToken ?? "", { actor: config.apifyActor });
     default:
       throw new AdLibraryError(`Unknown backend ${String(config.backend)}.`, {
         hint: "FBADS_BACKEND must be browser, scrapecreators or apify.",

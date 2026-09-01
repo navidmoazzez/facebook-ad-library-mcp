@@ -63,9 +63,21 @@ export class ScrapeCreatorsBackend implements Backend {
   readonly name = "scrapecreators" as const;
   readonly needsKey = true;
 
+  /**
+   * `cacheDays` sets ScrapeCreators' `cache_max_age`. A response they already
+   * hold that is newer than this is served for **zero credits**. During one
+   * research session the same advertiser gets searched repeatedly, and without
+   * this every repeat is billed again at full price.
+   *
+   * One day by default: ad libraries move slowly enough that a day-old answer
+   * is still true, and the saving is the difference between a session costing
+   * one credit and costing thirty. Set FBADS_CACHE_DAYS=0 to always pay for
+   * fresh.
+   */
   constructor(
     private readonly apiKey: string,
     private readonly timeoutMs = 120_000,
+    private readonly cacheDays = 1,
   ) {
     if (!apiKey) {
       throw new AdLibraryError("The scrapecreators backend needs an API key.", {
@@ -129,6 +141,7 @@ export class ScrapeCreatorsBackend implements Backend {
       status: STATUS[params.activeStatus ?? "active"],
       media_type: MEDIA[params.mediaType ?? "all"],
       cursor: params.cursor,
+      cache_max_age: this.cacheDays > 0 ? String(this.cacheDays) : undefined,
     };
 
     const payload = params.pageId
@@ -184,14 +197,20 @@ export class ScrapeCreatorsBackend implements Backend {
   }
 
   async getAd(libraryId: string): Promise<Ad | undefined> {
-    const payload = await this.get("/v1/facebook/adLibrary/ad", { id: libraryId });
+    const payload = await this.get("/v1/facebook/adLibrary/ad", {
+      id: libraryId,
+      cache_max_age: this.cacheDays > 0 ? String(this.cacheDays) : undefined,
+    });
     const harvest = parsePayloads(payload);
     const node = harvest.nodes[0];
     return node ? adFromGraphql(node, this.name) : undefined;
   }
 
   async transcribe(libraryId: string): Promise<string | undefined> {
-    const payload = await this.get("/v1/facebook/adLibrary/ad/transcript", { id: libraryId });
+    const payload = await this.get("/v1/facebook/adLibrary/ad/transcript", {
+      id: libraryId,
+      cache_max_age: this.cacheDays > 0 ? String(this.cacheDays) : undefined,
+    });
     if (typeof payload === "string") return payload;
     if (typeof payload === "object" && payload !== null) {
       for (const key of ["transcript", "text", "transcription"]) {

@@ -2,11 +2,28 @@
 
 | Component | Version | Last Updated |
 |-----------|---------|--------------|
-| facebook-ad-library-mcp | 0.1.1 | 2026-09-01 |
+| facebook-ad-library-mcp | 0.2.0 | 2026-09-01 |
 
 ---
 
 What changed, newest first, in terms of what it means for someone using it.
+
+## 0.2.0
+
+**Repeat searches on ScrapeCreators are now free.** Their API serves a cached
+response for zero credits when you tell it how old an answer you will accept, and
+we were not asking. A research session that searches the same advertiser thirty
+times was being billed thirty times. Default is one day; `FBADS_CACHE_DAYS=0`
+always pays for fresh.
+
+**The Apify backend now runs a much cheaper actor by default.** Roughly $0.30 per
+1,000 results against $3.40 to $5.80, and it takes the filters directly instead of
+a prebuilt URL, so nothing is lost in translation. `APIFY_ACTOR=full` switches back
+to the original, which is the only one with e-commerce enrichment.
+
+Two failures now say something useful instead of dumping a status code: an Apify
+plan that cannot run public Actors, and `get_ad` on an actor whose input has no
+field for an ad id.
 
 ## 0.1.1
 
