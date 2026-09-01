@@ -5,6 +5,7 @@
 import { z } from "zod";
 import { ArchiveClient } from "../archive/client.js";
 import { AdLibraryError } from "../errors.js";
+import { transparencyOutput } from "../adlibrary/schemas.js";
 import { defineTool, type AnyToolSpec } from "./kit.js";
 
 const getEuTransparency = defineTool({
@@ -28,6 +29,7 @@ const getEuTransparency = defineTool({
       .describe("Two-letter EU country code, e.g. DE, FR, IE. Default DE."),
     limit: z.number().int().min(1).max(100).optional().describe("Maximum ads to return."),
   },
+  outputSchema: transparencyOutput,
   handler: async (args, ctx) => {
     if (!ctx.config.archiveToken) {
       throw new AdLibraryError("No Meta Ad Library API token is configured.", {

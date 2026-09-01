@@ -20,6 +20,7 @@ export type Config = {
   storeDir?: string;
   hydrateMs: number;
   scrollWaitMs: number;
+  retries: number;
 };
 
 /** Like intFromEnv but accepts 0, for settings where zero is a real choice. */
@@ -56,5 +57,6 @@ export function loadConfig(): Config {
     storeDir: process.env["FBADS_STORE_DIR"] || undefined,
     hydrateMs: intFromEnv("FBADS_HYDRATE_MS", 9000),
     scrollWaitMs: intFromEnv("FBADS_SCROLL_WAIT_MS", 4000),
+    retries: intOrZeroFromEnv("FBADS_RETRIES", 1),
   };
 }

@@ -8,6 +8,7 @@
 
 import { z } from "zod";
 import { summarise } from "../format/ads.js";
+import { diffOutput } from "../adlibrary/schemas.js";
 import { defineTool, type AnyToolSpec } from "./kit.js";
 
 const diffAdvertiser = defineTool({
@@ -29,6 +30,7 @@ const diffAdvertiser = defineTool({
       .optional()
       .describe("How many ads to pull for the comparison. Keep it consistent between calls."),
   },
+  outputSchema: diffOutput,
   handler: async (args, ctx) => {
     const before = await ctx.store.snapshot(args.page_id);
 

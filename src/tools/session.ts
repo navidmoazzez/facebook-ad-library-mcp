@@ -1,5 +1,6 @@
 /** What this server is configured to do right now. */
 
+import { backendStatusOutput } from "../adlibrary/schemas.js";
 import { defineTool, type AnyToolSpec } from "./kit.js";
 
 const backendStatus = defineTool({
@@ -11,6 +12,7 @@ const backendStatus = defineTool({
     "unavailable, before telling the user it cannot be done.",
   schema: {},
   touchesNetwork: false,
+  outputSchema: backendStatusOutput,
   handler: async (_args, ctx) => ({
     backend: ctx.backend.name,
     needs_api_key: ctx.backend.needsKey,

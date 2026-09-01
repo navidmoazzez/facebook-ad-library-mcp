@@ -14,6 +14,7 @@ export function createBackend(config: Config): Backend {
         headless: config.headless,
         hydrateMs: config.hydrateMs,
         scrollWaitMs: config.scrollWaitMs,
+        retries: config.retries,
       });
     case "scrapecreators":
       return new ScrapeCreatorsBackend(config.scrapeCreatorsKey ?? "", undefined, config.cacheDays);

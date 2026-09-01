@@ -5,6 +5,13 @@
 import { z } from "zod";
 import { buildUrl } from "../adlibrary/url.js";
 import { detail, summarise } from "../format/ads.js";
+import {
+  adLibraryUrlOutput,
+  getAdOutput,
+  listAdvertisersOutput,
+  searchAdsOutput,
+  transcribeOutput,
+} from "../adlibrary/schemas.js";
 import { defineTool, searchArgs, type AnyToolSpec } from "./kit.js";
 
 const searchAds = defineTool({
@@ -30,6 +37,7 @@ const searchAds = defineTool({
       ),
     ...searchArgs,
   },
+  outputSchema: searchAdsOutput,
   handler: async (args, ctx) => {
     const result = await ctx.backend.search({
       query: args.query,
@@ -70,6 +78,7 @@ const listAdvertisers = defineTool({
     query: z.string().describe("Brand or company name to look up."),
     country: z.string().length(2).optional().describe("Two-letter country code. Default US."),
   },
+  outputSchema: listAdvertisersOutput,
   handler: async (args, ctx) => {
     const advertisers = await ctx.backend.listAdvertisers(args.query, args.country ?? "US");
     return {
@@ -103,6 +112,7 @@ const getAd = defineTool({
     library_id: z.string().describe("The Ad Library ID, the long number in an ad's URL."),
     country: z.string().length(2).optional().describe("Two-letter country code. Default US."),
   },
+  outputSchema: getAdOutput,
   handler: async (args, ctx) => {
     const ad = await ctx.backend.getAd(args.library_id, args.country ?? "US");
     if (!ad) {
@@ -126,6 +136,7 @@ const transcribeAd = defineTool({
   schema: {
     library_id: z.string().describe("The Ad Library ID of a video ad."),
   },
+  outputSchema: transcribeOutput,
   handler: async (args, ctx) => {
     if (!ctx.backend.transcribe) {
       return {
@@ -162,6 +173,7 @@ const adLibraryUrl = defineTool({
     media_type: z.enum(["all", "image", "meme", "video", "none"]).optional(),
   },
   touchesNetwork: false,
+  outputSchema: adLibraryUrlOutput,
   handler: async (args) => ({
     url: buildUrl({
       query: args.query,

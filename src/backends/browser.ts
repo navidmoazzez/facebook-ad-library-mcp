@@ -35,6 +35,9 @@ export type BrowserOptions = {
   headless?: boolean;
   hydrateMs?: number;
   scrollWaitMs?: number;
+  /** Extra attempts when a search comes back empty or captcha'd. */
+  retries?: number;
+  retryDelayMs?: number;
 };
 
 export class BrowserBackend implements Backend {
@@ -44,6 +47,8 @@ export class BrowserBackend implements Backend {
   private readonly headless: boolean;
   private readonly hydrateMs: number;
   private readonly scrollWaitMs: number;
+  private readonly retries: number;
+  private readonly retryDelayMs: number;
 
   // Launching Chromium costs seconds, so one instance is kept warm across calls.
   private browser: any;
@@ -54,6 +59,8 @@ export class BrowserBackend implements Backend {
     this.headless = options.headless ?? true;
     this.hydrateMs = options.hydrateMs ?? 9000;
     this.scrollWaitMs = options.scrollWaitMs ?? 4000;
+    this.retries = options.retries ?? 1;
+    this.retryDelayMs = options.retryDelayMs ?? 20_000;
   }
 
   private async launch(): Promise<any> {
@@ -122,9 +129,36 @@ export class BrowserBackend implements Backend {
       // Meta answers a headless browser with HTTP 403 on the document but still
       // serves the app and every payload. Judge success by ads parsed, never by status.
       await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60_000 });
-      await page.waitForTimeout(this.hydrateMs);
 
-      // The inlined first page. Read once: it does not change as we scroll.
+      // The first page of results is inlined in the document, so wait for the
+      // markup that carries it rather than for a fixed hydration guess. Falls
+      // back to the timeout if Meta ever stops inlining, in which case the
+      // scroll loop below still picks the ads up over the wire.
+      /* Wait for the markup that carries the inlined results, but never return
+         sooner than the page needs.
+
+         Meta answers an unrecognised client with a challenge page that reloads
+         itself. That destroys the execution context, so this rejects almost
+         immediately rather than timing out, and simply catching it meant reading
+         an empty page a third of a second after navigating. So the elapsed time
+         is measured and the remainder of the hydrate budget is slept off.
+
+         Passed as a string because the expression runs inside the page and this
+         package compiles without the DOM lib. */
+      const waitStart = Date.now();
+      const hydrated = await page
+        .waitForFunction('document.documentElement.innerHTML.includes("ad_archive_id")', null, {
+          timeout: this.hydrateMs,
+        })
+        .then(() => true)
+        .catch(() => false);
+
+      if (!hydrated) {
+        const remaining = this.hydrateMs - (Date.now() - waitStart);
+        if (remaining > 0) await page.waitForTimeout(remaining);
+      }
+
+      // Read once: it does not change as we scroll.
       bodies.push(...inlinePayloads(await page.content()));
 
       let seen = new Set<string>();
@@ -136,8 +170,20 @@ export class BrowserBackend implements Backend {
         if (ids.size >= limit || (!harvest.hasMore && ids.size > 0 && sameAsLast)) break;
         stalls = sameAsLast ? stalls + 1 : 0;
         seen = ids;
+
+        // Wait for the payload the scroll triggers, not for a fixed number of
+        // milliseconds. A clock guess is wrong in both directions: too short on
+        // a slow connection and it gives up early, too long and every search
+        // pays for the worst case. `scrollWaitMs` becomes the ceiling rather
+        // than the cost.
+        const nextPayload = page
+          .waitForResponse(
+            (r: any) => String(r.url()).includes("/api/graphql") && r.status() === 200,
+            { timeout: this.scrollWaitMs },
+          )
+          .catch(() => undefined);
         await page.mouse.wheel(0, 8000);
-        await page.waitForTimeout(this.scrollWaitMs);
+        await nextPayload;
       }
 
       await page.close();
@@ -154,7 +200,20 @@ export class BrowserBackend implements Backend {
     }
     const limit = params.limit ?? 30;
     const url = buildUrl(params);
-    const harvest = await this.serialise(() => this.collect(url, limit));
+
+    /* Meta rate limits by IP and recovers within a minute or so. Returning an
+       empty result with a note telling a human to wait is no use to an agent,
+       which just reports "no ads" and moves on. One retry after a pause turns
+       most of those into the answer that was actually there.
+
+       Only retried when nothing at all came back, or when Meta served a
+       captcha. A short result set is a real answer and gets returned as-is. */
+    let harvest = await this.serialise(() => this.collect(url, limit));
+    for (let attempt = 0; attempt < this.retries; attempt++) {
+      if (harvest.nodes.length > 0 && !harvest.captcha) break;
+      await new Promise((r) => setTimeout(r, this.retryDelayMs * (attempt + 1)));
+      harvest = await this.serialise(() => this.collect(url, limit));
+    }
 
     const ads: Ad[] = [];
     const seen = new Set<string>();
@@ -168,8 +227,8 @@ export class BrowserBackend implements Backend {
     let note: string | undefined;
     if (harvest.captcha) {
       note =
-        "Meta served a captcha instead of results, so nothing could be read. Wait a few " +
-        "minutes, or use a provider backend, which is not affected.";
+        `Meta served a captcha instead of results, and it persisted across ${this.retries + 1} ` +
+        "attempts. Wait a few minutes, or use a provider backend, which is not affected.";
     } else if (ads.length === 0) {
       note = harvest.total
         ? `No ads captured even though Meta reports ${harvest.total} matching. Retry in a minute.`

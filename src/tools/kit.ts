@@ -21,12 +21,25 @@ export type ToolContext = {
 
 export type ToolResult = {
   content: { type: "text"; text: string }[];
+  structuredContent?: Record<string, unknown>;
   isError?: boolean;
 };
 
-export function ok(data: unknown): ToolResult {
+/**
+ * Both shapes, every time.
+ *
+ * `structuredContent` is what a client renders as a table or a card, and it is
+ * only sent when the tool declares an `outputSchema`. `content` stays populated
+ * because a client that ignores structured output would otherwise show nothing
+ * at all, and because the model reads it directly.
+ */
+export function ok(data: unknown, structured = true): ToolResult {
   const text = typeof data === "string" ? data : JSON.stringify(data, null, 2);
-  return { content: [{ type: "text", text }] };
+  const result: ToolResult = { content: [{ type: "text", text }] };
+  if (structured && data && typeof data === "object" && !Array.isArray(data)) {
+    result.structuredContent = data as Record<string, unknown>;
+  }
+  return result;
 }
 
 /**
@@ -79,12 +92,14 @@ export const searchArgs = {
     .describe("How many ads to return. On the browser backend a higher number costs more time."),
 };
 
-export type ToolSpec<S extends ZodRawShape> = {
+export type ToolSpec<S extends ZodRawShape, O extends ZodRawShape = ZodRawShape> = {
   name: string;
   /** One line, imperative. Shown in tool pickers. */
   title: string;
   description: string;
   schema: S;
+  /** Declared so clients get `structuredContent` rather than a JSON string. */
+  outputSchema?: O;
   /**
    * Every tool in this server reads a public archive. None of them writes, so
    * `readOnlyHint` is true throughout and there is no confirm gating to apply.
@@ -94,7 +109,9 @@ export type ToolSpec<S extends ZodRawShape> = {
   handler: (args: z.infer<z.ZodObject<S>>, ctx: ToolContext) => Promise<unknown>;
 };
 
-export function defineTool<S extends ZodRawShape>(spec: ToolSpec<S>): ToolSpec<S> {
+export function defineTool<S extends ZodRawShape, O extends ZodRawShape = ZodRawShape>(
+  spec: ToolSpec<S, O>,
+): ToolSpec<S, O> {
   return spec;
 }
 
@@ -107,7 +124,7 @@ export function defineTool<S extends ZodRawShape>(spec: ToolSpec<S>): ToolSpec<S
  * each `defineTool` call, where schema and handler are checked against each
  * other. This only loosens the seam where they are collected.
  */
-export type AnyToolSpec = Omit<ToolSpec<ZodRawShape>, "handler"> & {
+export type AnyToolSpec = Omit<ToolSpec<ZodRawShape, ZodRawShape>, "handler"> & {
   handler: (args: never, ctx: ToolContext) => Promise<unknown>;
 };
 
@@ -122,6 +139,7 @@ export function register(
       title: spec.title,
       description: spec.description,
       inputSchema: spec.schema,
+      ...(spec.outputSchema ? { outputSchema: spec.outputSchema } : {}),
       annotations: {
         title: spec.title,
         readOnlyHint: true,
@@ -136,7 +154,7 @@ export function register(
     // than in every tool definition.
     (async (args: Record<string, unknown>) => {
       try {
-        return ok(await spec.handler(args as never, contextFor()));
+        return ok(await spec.handler(args as never, contextFor()), Boolean(spec.outputSchema));
       } catch (error) {
         return fail(error);
       }
