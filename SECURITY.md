@@ -81,3 +81,12 @@ So an omission reads as a decision rather than an oversight:
 - **No credential storage.** Environment only, so there is no file to protect.
 - **No write tools.** There is no useful write against a public archive, and
   adding one would change the safety model of the whole server.
+
+## Good-faith research
+
+Look at whatever you like in this repository. When testing, please do not access,
+change or delete data that is not yours, and do not disrupt a service other
+people depend on. If a test could affect anyone else, stop and send a private
+report first.
+
+Research done in that spirit is welcome, and nothing here is a trap.
