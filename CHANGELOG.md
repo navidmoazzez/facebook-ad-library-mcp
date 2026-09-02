@@ -1,4 +1,4 @@
-# Facebook Ad Library MCP Versions
+# Facebook Ad Library MCP changelog
 
 | Component | Version | Last Updated |
 |-----------|---------|--------------|
