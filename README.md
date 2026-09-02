@@ -9,6 +9,7 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/navidmoazzez/facebook-ad-library-mcp/ci.yml?branch=main&label=CI)](https://github.com/navidmoazzez/facebook-ad-library-mcp/actions)
 [![YouTube](https://img.shields.io/badge/YouTube-@thenavidm-red?logo=youtube&logoColor=white)](https://youtube.com/@thenavidm?sub_confirmation=1)
 [![X](https://img.shields.io/badge/X-@thenavidm-black?logo=x)](https://x.com/thenavidm)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-thenavidm-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/thenavidm)
 
 Give any AI agent read access to every ad running on Facebook, Instagram, Messenger, Threads and Audience Network. Free, no API key, any country.
 
