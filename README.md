@@ -25,6 +25,8 @@ Meta's Ad Library is the largest public archive of advertising creative in the w
 
 Built by [Navid Moazzez](https://navid.me?utm_source=github&utm_medium=readme&utm_campaign=facebook-ad-library-mcp).
 
+<img src="https://cdn.navid.media/repos/facebook-ad-library-mcp.gif?v=1" alt="Claude Code using the Facebook Ad Library MCP server" width="520">
+
 ## Contents
 
 | | Section | |
