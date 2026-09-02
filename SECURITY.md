@@ -84,9 +84,12 @@ So an omission reads as a decision rather than an oversight:
 
 ## Good-faith research
 
-Look at whatever you like in this repository. When testing, please do not access,
-change or delete data that is not yours, and do not disrupt a service other
-people depend on. If a test could affect anyone else, stop and send a private
-report first.
+Read, run and pull apart anything here. Nobody but the maintainer can change
+this repository, so nothing you do while investigating puts it at risk.
+
+The care is owed to the service the tool talks to, not to the code. When
+testing, use your own account and your own data. Do not point it at somebody
+else's, and do not hammer a shared API to the point where other people notice.
+If a test could affect anyone but you, stop and send a private report first.
 
 Research done in that spirit is welcome, and nothing here is a trap.
