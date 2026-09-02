@@ -357,6 +357,8 @@ Navid Moazzez is a leading AI business strategist, and the host of the AI Creato
 - Instagram: [@thenavidm](https://instagram.com/thenavidm)
 - LinkedIn: [thenavidm](https://linkedin.com/in/thenavidm)
 
+If this is useful, star the repo and come say hi on [X](https://x.com/thenavidm).
+
 ## License
 
 [MIT](./LICENSE). Free to use, modify, and share.
