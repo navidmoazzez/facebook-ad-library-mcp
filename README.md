@@ -98,7 +98,7 @@ Meta's official Ad Library API publishes real spend, impressions and demographic
 
 ## 4. Connect your client 🔌
 
-The long version, every step with what to do when one fails, is in [references/setup.md](references/setup.md).
+The long version, every step with what to do when one fails, is in [INSTALL.md](INSTALL.md).
 
 ### Claude Code
 

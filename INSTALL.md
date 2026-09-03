@@ -1,4 +1,4 @@
-# Setup, in full
+# Install
 
 The short version: there is nothing to set up. The default backend needs no key, no account and no credential.
 
