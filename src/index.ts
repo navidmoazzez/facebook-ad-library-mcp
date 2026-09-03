@@ -32,7 +32,7 @@ Optional:
   FBADS_SCROLL_WAIT_MS            pause between scrolls, default 4000
   FBADS_HTTP_PORT / _HOST / _TOKEN  for --http
 
-https://github.com/navidmoazzez/facebook-ad-library-mcp
+https://github.com/thenavidm/facebook-ad-library-mcp
 `;
 
 async function main(): Promise<void> {
